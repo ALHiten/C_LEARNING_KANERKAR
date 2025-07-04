@@ -8,14 +8,41 @@
 #include <stdio.h>
 
 int main() {
-    int year, days, day_of_week;
+    int y, year, leap, norm, days, week;
 
-    printf("Enter the year : ");
-    scanf("%d", &year);
-
-    1900 monday h to 
     
+    printf("Enter the year : ");
+    scanf("%d", &y); 
 
-   
+    year = y - 1;
+    leap  = (year / 4) - (year / 100) + (year / 400);
+    norm = year - leap; 
+    days = (norm * 365) + (leap * 366);
+    week =  (1 + days) % 7;
+
+    if (year == 1900){
+        printf(" It's monday! tf it's on the question already");
+    } else if (week == 1){
+        printf(" Monday! ");
+    } else if (week == 2){
+        printf(" Tuesday! ");
+    } else if (week == 3){
+        printf(" Wednesday! ");
+    } else if (week == 4){
+        printf(" Thursday! ");
+    } else if (week == 5){
+        printf(" Friday! ");
+    } else if (week == 6){
+        printf(" Saturday! ");
+    } else if (week == 0){
+        printf(" Sunday! ");
+    } else {
+        printf(" Wrong program ");
+    }
+
+    return 0;
+
+
+
     
 }
